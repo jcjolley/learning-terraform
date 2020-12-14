@@ -22,7 +22,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential rsync; sudo snap install node --classic --channel=14"
+  metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential rsync"
 
   network_interface {
     network = "default"
