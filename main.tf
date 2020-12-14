@@ -22,7 +22,7 @@ resource "google_compute_instance" "default" {
     }
   }
 
-  metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential rsync"
+  metadata_startup_script = "sudo apt-get update; sudo apt-get install -yq build-essential rsync; curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -; sudo apt -y install nodejs; sudo mkdir web; cd web; echo \"<html><body><h1>Terraform Works</h1></body></html>\" > index.html; nohup sudo npx http-server "
 
   network_interface {
     network = "default"
